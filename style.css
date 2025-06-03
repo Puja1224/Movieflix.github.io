@@ -1,0 +1,263 @@
+ /* Google font import */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+ 
+  :root {
+    --primary-color: #4e54c8;
+    --secondary-color: #8f94fb;
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --muted-text: #a0a0a0;
+    --accent-color: #ff6f61;
+    --card-bg: #1e1e2f;
+    --nav-bg: rgba(18, 18, 18, 0.95);
+  }
+
+ 
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 60px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  }
+  nav .logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  nav li {
+    margin-left: 1.8rem;
+  }
+  nav li:first-child {
+    margin-left: 0;
+  }
+  nav a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.3rem 0;
+    transition: color 0.3s ease;
+  }
+  nav a:hover, nav a:focus {
+    color: var(--secondary-color);
+  }
+
+
+  main {
+    margin-top: 60px;
+    flex: 1 0 auto;
+    padding: 2rem 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    border-left: 6px solid var(--accent-color);
+    padding-left: 0.8rem;
+  }
+
+
+  .trending-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.3rem;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 0.5);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  .card-content {
+    padding: 0.7rem 1rem 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 8px 0 0;
+  }
+  .card-subtitle {
+    font-size: 0.85rem;
+    color: var(--muted-text);
+    margin-top: 4px;
+  }
+
+
+  #about {
+    margin-top: 3rem;
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+  }
+  #about p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    max-width: 850px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+ 
+  #reviews {
+    margin-top: 3rem;
+  }
+  .review-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 1.6rem;
+  }
+  .review-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem 1.8rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.6);
+    position: relative;
+  }
+  .review-card::before {
+    content: "“";
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    opacity: 0.3;
+    font-family: serif;
+  }
+  .review-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ddd;
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+  .review-author {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    text-align: right;
+  }
+
+
+  footer {
+    background: var(--nav-bg);
+    text-align: center;
+    padding: 1.1rem 1rem;
+    color: var(--muted-text);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+
+  @media (max-width: 768px) {
+    main {
+      padding: 1.5rem 1.5rem;
+    }
+    nav {
+      padding: 0 1.2rem;
+    }
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav li {
+      margin-left: 1rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+    .card img {
+      height: 150px;
+    }
+    #about {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav {
+      flex-direction: column;
+      height: auto;
+      padding: 0.6rem 1rem;
+    }
+    nav .logo {
+      margin-bottom: 0.4rem;
+    }
+    nav ul {
+      justify-content: center;
+    }
+    main {
+      padding: 1rem 1rem;
+    }
+    .card img {
+      height: 120px;
+    }
+    h2 {
+      font-size: 1.4rem;
+    }
+    #about p {
+      font-size: 1rem;
+    }
+    .review-card {
+      padding: 1rem 1rem;
+    }
+    .review-text {
+      font-size: 0.9rem;
+    }
+  }
